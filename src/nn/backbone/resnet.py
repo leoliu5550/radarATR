@@ -1,16 +1,10 @@
 import torch
 import torch.nn as nn 
 import torch.nn.functional as F 
-
-# from collections import OrderedDict
-
-# from ..base import get_activation, ConvNormLayer, FrozenBatchNorm2d
-
 from core import register
 
 # __all__ = ['resnet18','resnet34','resnet50','resnet101','resnet152']
 __all__ = ['Resnet50']
-
 from torchvision.models import resnet50
 
 
@@ -23,6 +17,7 @@ from torchvision.models import resnet50
 
 @register
 class Resnet50(nn.Module):
+    __inject__ = ['ResNet50', ]
     def __init__(self,**kwargs):
         super().__init__()
         if kwargs['pretrained'] ==True:

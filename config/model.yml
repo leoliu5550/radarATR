@@ -2,7 +2,7 @@ task: detection
 experiment: Develop
 
 
-model: ResNet50
+model: Resnet50
 criterion: SetCriterion
 postprocessor: RTDETRPostProcessor
 
@@ -15,7 +15,7 @@ RTDETR:
 
   
 ResNet50:
-  depth: Resnet50
+  depth: resnet50
   variant: d
   freeze_at: 0
   return_idx: [1, 2, 3]

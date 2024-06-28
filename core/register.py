@@ -29,7 +29,6 @@ def register(cls: type):
 
     else:
         raise ValueError(f'register not a function or class {cls}')
-
     return cls 
 
 
@@ -99,7 +98,8 @@ def create(type_or_name, **kwargs):
     arg_names = [arg for arg in argspec.args if arg != 'self']
     cls_kwargs = {}
     cls_kwargs.update(cfg)
-    
+    print(f"cls_kwargs = {cls_kwargs}")
+
     # shared var
     for k in cfg['_share']:
         if k in GLOBAL_CONFIG:
