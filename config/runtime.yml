@@ -1,0 +1,19 @@
+epoches: 72
+
+batch_norm: True
+
+scaler:
+  type: GradScaler
+  enabled: True
+
+ema:
+  type: ModelEMA
+  decay: 0.9999
+  warmups: 2000
+
+
+__include__: [
+  'dataset.yml',
+  'model.yml',
+  'optimizer.yml',
+]
